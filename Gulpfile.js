@@ -8,8 +8,8 @@ var paths = {
 };
 
 gulp.task('build', function() {
-  return gulp.src('client/app/app.js')
-    .pipe(webpack(require('webpack.config')))
+  return gulp.src('./client/app/app.js')
+    .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest('client'));
 });
 
@@ -29,7 +29,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('dev', function(done) {
-  sync('build', 'watch', done);
+  sync('build', 'serve', 'watch', done);
 });
 
 
