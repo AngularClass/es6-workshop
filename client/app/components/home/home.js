@@ -1,15 +1,7 @@
-import './home.css';
 import angular from 'angular';
-import template from './home.html';
-import {HomeController as controller} from './home.controller';
+import {HomeComponent} from './home.component';
 
 let homeModule = angular.module('home', [])
-  .directive('home', function(){
-    return {
-      template,
-      controller,
-      restrict: 'E'
-    };
-  });
+  .directive('home', HomeComponent);
 
 export { homeModule };

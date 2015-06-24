@@ -4,7 +4,7 @@ var gulp    = require('gulp'),
     sync    = require('run-sequence');
 
 var paths = {
-  app: ['client/app/**/*.js']
+  app: ['client/app/**/*.{js,css,html}']
 };
 
 gulp.task('build', function() {
