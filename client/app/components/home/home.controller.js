@@ -3,3 +3,7 @@ class HomeController {
 
   }
 }
+
+HomeController.$inject = ['$log'];
+
+export {HomeController};

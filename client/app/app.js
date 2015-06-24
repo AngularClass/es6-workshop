@@ -1,3 +1,4 @@
+import 'normalize.css';
 import angular from 'angular';
 import {homeModule} from './components/components';
 

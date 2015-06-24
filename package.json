@@ -23,6 +23,7 @@
     "webpack": "^1.9.11"
   },
   "dependencies": {
-    "angular": "^1.4.1"
+    "angular": "^1.4.1",
+    "normalize.css": "^3.0.3"
   }
 }
