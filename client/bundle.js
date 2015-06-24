@@ -28728,10 +28728,19 @@
 	
 	var count = 0;
 	
-	var Notes = function Notes() {
-	  var notes = [{ content: 'hey i am an note', id: count }];
+	var Notes = function Notes($http) {
+	  var notes = [];
+	  var api = 'http://localhost:3000/notes';
 	
 	  var getAllNotes = function getAllNotes() {
+	    return $http.get(api).then(function (_ref) {
+	      var data = _ref.data;
+	
+	      notes = data;
+	    });
+	  };
+	
+	  var getState = function getState() {
 	    return notes;
 	  };
 	
@@ -28745,7 +28754,8 @@
 	      notes.push(note);
 	    },
 	    getAllNotes: getAllNotes,
-	    getOneNote: getOneNote
+	    getOneNote: getOneNote,
+	    getState: getState
 	  };
 	};
 	
@@ -41283,7 +41293,7 @@
 /* 23 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"note-maker\">\n  <form ng-submit=\"vm.makeNote(vm.newNote)\">\n    <input type=\"text\" placeholder=\"add note\" ng-model=\"vm.newNote\">\n\n    <button type=\"submit\">create</button>\n  </form>\n</div>\n"
+	module.exports = "<div class=\"note-maker\">\n  <form ng-submit=\"vm.makeNote(vm.newNote)\">\n    <input type=\"text\" placeholder=\"add note\" ng-model=\"vm.newNote\">\n    <button type=\"submit\">create</button>\n  </form>\n</div>\n"
 
 /***/ },
 /* 24 */
@@ -41398,8 +41408,9 @@
 	    _classCallCheck(this, NoteListController);
 	
 	    this.Notes = Notes;
+	    this.notes = this.Notes.getState();
 	
-	    this.notes = this.getAllNotes();
+	    this.Notes.getAllNotes();
 	  }
 	
 	  _createClass(NoteListController, [{

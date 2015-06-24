@@ -1,8 +1,9 @@
 class NoteListController {
   constructor(Notes) {
     this.Notes = Notes;
+    this.notes = this.Notes.getState();
 
-    this.notes = this.getAllNotes();
+    this.Notes.getAllNotes();
   }
 
   createNote(content) {
