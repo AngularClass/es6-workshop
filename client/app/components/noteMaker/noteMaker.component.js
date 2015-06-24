@@ -1,5 +1,5 @@
 import './noteMaker.css';
-import {NoteMakerController as Controller} from './noteMaker.controller';
+import {NoteMakerController as controller} from './noteMaker.controller';
 import template from './noteMaker.html';
 
 let NoteMakerComponent = function() {

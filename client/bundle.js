@@ -56,7 +56,7 @@
 	
 	var _componentsComponents = __webpack_require__(7);
 	
-	_angular2['default'].module('app', [_componentsComponents.homeModule.name]);
+	_angular2['default'].module('app', [_componentsComponents.homeModule.name, _componentsComponents.noteMakerModule.name]);
 
 /***/ },
 /* 1 */
@@ -28698,7 +28698,10 @@
 	
 	var _homeHome = __webpack_require__(8);
 	
+	var _noteMakerNoteMaker = __webpack_require__(14);
+	
 	exports.homeModule = _homeHome.homeModule;
+	exports.noteMakerModule = _noteMakerNoteMaker.noteMakerModule;
 
 /***/ },
 /* 8 */
@@ -28796,7 +28799,7 @@
 /* 12 */
 /***/ function(module, exports) {
 
-	module.exports = "<section class=\"home\">\n  <h1>hey I am home</h1>\n</section>\n"
+	module.exports = "<section class=\"home\">\n  <h1>hey I am home</h1>\n  <note-maker></note-maker>\n</section>\n"
 
 /***/ },
 /* 13 */
@@ -28817,6 +28820,122 @@
 	HomeController.$inject = ['$log'];
 	
 	exports.HomeController = HomeController;
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _angular = __webpack_require__(5);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _noteMakerComponent = __webpack_require__(15);
+	
+	var noteMakerModule = _angular2['default'].module('noteMaker', []).directive('noteMaker', _noteMakerComponent.NoteMakerComponent);
+	
+	exports.noteMakerModule = noteMakerModule;
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	__webpack_require__(16);
+	
+	var _noteMakerController = __webpack_require__(18);
+	
+	var _noteMakerHtml = __webpack_require__(19);
+	
+	var _noteMakerHtml2 = _interopRequireDefault(_noteMakerHtml);
+	
+	var NoteMakerComponent = function NoteMakerComponent() {
+	  return {
+	    restrict: 'E',
+	    template: _noteMakerHtml2['default'],
+	    controller: _noteMakerController.NoteMakerController
+	  };
+	};
+	
+	exports.NoteMakerComponent = NoteMakerComponent;
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(17);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./noteMaker.css", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./noteMaker.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var NoteMakerController = function NoteMakerController() {
+	  _classCallCheck(this, NoteMakerController);
+	};
+	
+	exports.NoteMakerController = NoteMakerController;
+
+/***/ },
+/* 19 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"note-maker\">\n  <form>\n    <input type=\"text\" placeholder=\"add note\">\n    <button>create</button>\n  </form>\n</div>\n"
 
 /***/ }
 /******/ ]);
