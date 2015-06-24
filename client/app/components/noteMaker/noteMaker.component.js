@@ -6,6 +6,7 @@ let NoteMakerComponent = function() {
   return {
     restrict: 'E',
     template,
+    controllerAs: 'vm',
     controller
   };
 }

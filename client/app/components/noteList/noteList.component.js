@@ -6,6 +6,7 @@ let NoteListComponent = () => {
   return {
     restrict: 'E',
     scope: {},
+    controllerAs: 'vm',
     controller,
     template
   };

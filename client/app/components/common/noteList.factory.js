@@ -2,7 +2,9 @@ import _ from 'lodash';
 let count = 0;
 
 let Notes = () => {
-  const notes = [];
+  const notes = [
+    { content: 'hey i am an note', id: count}
+  ];
 
   let getAllNotes = () => {
     return notes;

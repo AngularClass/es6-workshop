@@ -1,9 +1,12 @@
 import 'normalize.css';
 import angular from 'angular';
-import {homeModule, noteMakerModule, noteListModule} from './components/components';
+import {commonModule} from './components/common/common';
+import {homeModule, noteMakerModule, noteListModule, noteModule} from './components/components';
 
 angular.module('app', [
   homeModule.name,
   noteMakerModule.name,
-  noteListModule.name
+  noteListModule.name,
+  commonModule.name,
+  noteModule.name
 ]);
