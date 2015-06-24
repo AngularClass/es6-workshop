@@ -1,4 +1,4 @@
-class Note {
+class NoteListController {
   constructor(Notes) {
     this.Notes = Notes;
 
@@ -19,6 +19,6 @@ class Note {
   }
 }
 
-Note.$inject = ['Notes'];
+NoteListController.$inject = ['Notes'];
 
-export {Note};
+export {NoteListController};
