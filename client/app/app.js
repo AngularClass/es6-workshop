@@ -1,2 +1,3 @@
-let me = 'Me';
-alert(me);
+import angular from 'angular';
+
+angular.module('app', []);
