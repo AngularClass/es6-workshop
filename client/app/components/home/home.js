@@ -1,8 +1,9 @@
 import angular from 'angular';
+import template from './home.html';
 
 let homeModule = angular.module('home', [])
   .directive('home', function(){
-    return {};
-  })
+    return {template, controller};
+  });
 
-export { homeModule};
+export { homeModule };

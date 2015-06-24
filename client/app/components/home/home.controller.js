@@ -1,0 +1,5 @@
+class HomeController {
+  constructor($log) {
+
+  }
+}

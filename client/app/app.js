@@ -1,3 +1,6 @@
 import angular from 'angular';
+import {homeModule} from './components/components';
 
-angular.module('app', []);
+angular.module('app', [
+  homeModule.name
+]);
